@@ -1,0 +1,40 @@
+﻿
+<body class="registro">
+    <div class="tm-section tm-bg-img" id="tm-section-1">
+        <div class="container text-md-center">
+            <div class="row justify-content-center pt-5 mt-5 mr-1">
+                <div class="col-md-4 formulario">
+                    <form action="/pokemon/create" enctype="multipart/form-data" method="post">
+                        <div class="form-group text-center">
+                            <br />
+                            <h3 class="titulo">Crear Pokemon </h3>
+                        </div>
+                        <div class="form-group mx-sm-4 ">
+                            <input type="text" value="" name="Nombre" class="form-control" placeholder="Nombre" />
+                            @Html.ValidationMessage("Nombre")
+                        </div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <select name="TipoId">
+                                <option value="">-- Selecciona tipo de pokemon --</option>
+                                @foreach (var item in ViewBag.Types)
+                                {
+                                    <option value="@item.Id">@item.Nombre</option>
+                                }
+                            </select>
+                            @Html.ValidationMessage("TipoId")
+                        </div>
+                        <div class="form-group mx-sm-4 ">
+                            <input type="file" name="image" class="form-control" />
+                            @Html.ValidationMessage("ImagePath")
+                        </div>
+                        <div class="form-group mx-sm-4 pb-1">
+                            <input type="submit" class="btn btn-primary registrara" value="Registrarse" />
+                        </div>
+                        <br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

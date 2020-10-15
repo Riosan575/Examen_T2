@@ -1,0 +1,26 @@
+﻿
+<h1>Atrapar Pokemon</h1>
+
+
+<form action="/atrapar/atrapar" enctype="multipart/form-data" method="post">
+
+    <input type="file" name="Image" />
+     <select name="IdUsuario">
+        <option value="">-- Selecciona una opción --</option>
+        @foreach (var item in ViewBag.users)
+        {
+            <option value="@item.Id">@item.Usuario</option>
+        }
+    </select>
+    <select name="IdPokemon">
+        <option value="">-- Selecciona una opción --</option>
+        @foreach (var item in ViewBag.pokemons)
+        {
+            <option value="@item.Id">@item.Nombre</option>
+        }
+    </select>
+
+<input type="date" name="FechaCaptura" placeholder="Fecha de Captura"/>
+    <button>Guardar</button>
+
+</form>
